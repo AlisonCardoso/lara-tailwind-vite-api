@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="LaravelPint">
+    <laravel_pint_settings>
+      <LaravelPintConfiguration tool_path="$PROJECT_DIR$/teste-vite/vendor/bin/pint" />
+    </laravel_pint_settings>
+  </component>
   <component name="MessDetectorOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
@@ -10,8 +15,140 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/teste-vite/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/composer" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/ta-tikoma/phpunit-architecture-test" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/laravel/pint" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/jean85/pretty-package-versions" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/league/config" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/pestphp/pest-plugin" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/pestphp/pest" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/pestphp/pest-plugin-mutate" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/pestphp/pest-plugin-laravel" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/pestphp/pest-plugin-arch" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/brianium/paratest" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/teste-vite/vendor/livewire/livewire" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/teste-vite/phpunit.xml" custom_loader_path="$PROJECT_DIR$/teste-vite/vendor/autoload.php" paratest_path="$PROJECT_DIR$/teste-vite/vendor/bin/paratest_for_phpstorm" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />
