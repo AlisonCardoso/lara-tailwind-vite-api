@@ -11,7 +11,7 @@
 <body>
 
 
-
+@include('components.navbar')
 
 <div>
     @yield('content')
