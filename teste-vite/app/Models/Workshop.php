@@ -8,4 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class Workshop extends Model
 {
     use HasFactory;
+    protected $fillable = [
+       'address_id',
+        'cnpj',
+        'razao_social',
+        'nome_fantasia',
+        'descricao_situacao_cadastral',
+        'cnae_fiscal_descricao',
+        'phone_number',
+        'email',
+        'responsavel',
+    ];
+    public function user()
+    {
+
+        return $this->hasMany(User::class);
+    }
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+   
+    
 }
