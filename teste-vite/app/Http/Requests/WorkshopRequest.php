@@ -24,22 +24,32 @@ class WorkshopRequest extends FormRequest
     {
         return [
 
+           
+       
+       
+       
+            //dados da empresa
 
-
-            'name' => 'required|string',
+           
             'email' => 'required|email',
             'cnpj' => 'required|string',
-            'insrcicao_estadual' => 'required|string',
+            'descricao_situacao_cadastral' => 'required|string',
+            'cnae_fiscal_descricao' => 'required|string',
+            'razao_social' => 'required|string',
             'phone_number' => 'required|string',
             'responsavel' => 'required| string',
-            'workshop_id' => 'required|numeric',
-            'state_id' => 'required|numeric',
-            'city_id' => 'required|numeric',
-            'address' => 'required| string',
-            'district' =>'required| string',
+            'address_id' => 'required|numeric',
+
+            // dados endereço
+           
+            'state' => 'required| string',
+            'city' => 'required| string',
+            'street' => 'required| string',
+            'neighborhood' =>'required| string',
             'cep' => 'required',
-            'number' => 'required|numeric',
+            'number' => 'nullable|numeric',
             'complement' => 'nullable',
+            
 
 
 
@@ -52,17 +62,20 @@ class WorkshopRequest extends FormRequest
     public function messages(): array
     {
         return[
-            'name.required' => 'Campo nome é obrigatório!',
+            'cnpj.required' => 'Campo CNPJ é obrigatório!',
+          //  'nome_fantasia.required' => 'Campo nome fantasia é obrigatório!',
+            'descricao_situacao_cadastral.required' => 'Campo situação é obrigatório!',
+            'cnae_fiscal_descricao.required' => 'Campo nome fantasia é obrigatório!',
             'email.required' => 'Campo e-mail é obrigatório!',
             'phone_number.required' => 'Campo telefone é obrigatório!',
             'responsavel.required' => 'Campo responsável é obrigatório!',
-             'state_id.required' => 'Selecione um estado',
-             'city_id.required' => 'Selecione uma cidade',
-            'address.max' => 'Campo endereço é obrigatório!',
-            'district.max' => 'Campo bairro é obrigatório!',
+             'state.required' => 'Selecione um estado',
+             'city.required' => 'Selecione uma cidade',
+            'street.max' => 'Campo endereço é obrigatório!',
+            'neighborhood.required' => 'Campo bairro é obrigatório!',
             'cep.required' => 'Campo cep é obrigatório!',
-            'address.required' => 'Campo endereço é obrigatório!',
-            'number.required' => 'Campo numero é obrigatório!',
+            'street.required' => 'Campo endereço é obrigatório!',
+           
         ];
     }
 }

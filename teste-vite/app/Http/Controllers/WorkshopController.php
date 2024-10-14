@@ -10,8 +10,6 @@ use App\Http\Requests\WorkshopRequest;
 
 use Exception;
 use App\Models\Address;
-use App\Models\State;
-use App\Models\City;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 

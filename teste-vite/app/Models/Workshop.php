@@ -12,7 +12,6 @@ class Workshop extends Model
        'address_id',
         'cnpj',
         'razao_social',
-        'nome_fantasia',
         'descricao_situacao_cadastral',
         'cnae_fiscal_descricao',
         'phone_number',

@@ -29,6 +29,28 @@
             
             @livewire('buscar-cep')
 
+            <div class="md:flex items-center mt-12">
+
+                <div class="w-full md:w-1/2 flex flex-col">
+                    <label class="font-semibold leading-none text-gray-300">numero</label>
+                    <input type="text" class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" name="number" />
+                </div>
+                <div class="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
+                    <label class="font-semibold leading-none text-gray-300">Complemento</label>
+                    <input type="text" class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" name="complement" />
+                </div>
+
+            </div>
+
+            <div class="mt-6 flex justify-end">
+                <x-secondary-button xhref="{{ route('workshops.index') }}">
+                    {{ __('Cancel') }}
+                </x-secondary-button>
+    
+                <x-primary-button class="ms-3">
+                    {{ __('Save') }}
+                </x-primary-button>
+            </div>
                 
 
                 <div class="mt-6">
