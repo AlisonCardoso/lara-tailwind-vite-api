@@ -23,53 +23,41 @@ class WorkshopRequest extends FormRequest
     public function rules(): array
     {
         return [
-
-           
-       
-       
-       
-            //dados da empresa
-
-           
-            'email' => 'email',
-            'cnpj' => 'required|string',
-            'descricao_situacao_cadastral' => 'required|string',
-            'cnae_fiscal_descricao' => 'required|string',
-            'razao_social' => 'required|string',
-            'phone_number' => 'string',
-            'responsavel' => ' string',
-            'workshop_id' => 'required|numeric',
-        
-
-
-
-            // dados endereço
-           
-            'state' => 'required| string',
-            'city' => 'required| string',
-            'street' => 'required| string',
-            'neighborhood' =>'required| string',
-            'cep' => 'required',
-            'number' => 'nullable|numeric',
-            'complement' => 'nullable',
-
+            'cnpj' => 'required|string|max:14|unique:workshops,cnpj,' . $this->route('workshop'),
+            'razao_social' => 'required|string|max:255',
+            'cnae_fiscal_descricao' => 'nullable|string|max:255',
+            'descricao_situacao_cadastral' => 'nullable|string|max:255',
+            'email' => 'nullable|email|max:255',
+            'responsavel' => 'nullable|string|max:255',
+            'phone_number' => 'required|string|max:15',
+            'cep' => 'required|string|max:10',
+            'state' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'neighborhood' => 'required|string|max:255',
+            'street' => 'required|string|max:255',
+            'number' => 'nullable|string|max:10',
+            'complement' => 'nullable|string|max:255',
         ];
     }
 
     public function messages(): array
     {
         return[
-            'cnpj.required' => 'Campo CNPJ é obrigatório!',
+            'cnpj.required' => 'O CNPJ é obrigatório.',
+            'cnpj.unique' => 'Esse CNPJ já está cadastrado.',
+            'razao_social.required' => 'A razão social é obrigatória.',
             'descricao_situacao_cadastral.required' => 'Campo situação é obrigatório!',
             'cnae_fiscal_descricao.required' => 'Campo nome fantasia é obrigatório!',
-            'email.required' => 'Campo e-mail é obrigatório!',
-            'phone_number.required' => 'Campo telefone é obrigatório!',
-            'responsavel.required' => 'Campo responsável é obrigatório!',
-             'state.required' => 'Selecione um Estado',
-             'city.required' => 'Selecione uma Cidade',
-            'neighborhood.required' => 'Campo bairro é obrigatório!',
-            'cep.required' => 'Campo cep é obrigatório!',
-            'street.required' => 'Campo endereço é obrigatório!',
+            'email.nullable' => 'O e-mail é obrigatório.',
+            'email.email' => 'O e-mail deve ser um endereço de e-mail válido.',
+             'responsavel.nullable' => 'O nome do responsável é obrigatório.',
+            'phone_number.nullable' => 'O telefone é obrigatório.',
+            'cep.required' => 'O CEP é obrigatório.',
+            'state.required' => 'O estado é obrigatório.',
+            'city.required' => 'A cidade é obrigatória.',
+            'neighborhood.required' => 'O bairro é obrigatório.',
+            'street.required' => 'A rua é obrigatória.',
+           
            
         ];
     }
