@@ -31,14 +31,17 @@ class WorkshopRequest extends FormRequest
             //dados da empresa
 
            
-            'email' => 'required|email',
+            'email' => 'email',
             'cnpj' => 'required|string',
             'descricao_situacao_cadastral' => 'required|string',
             'cnae_fiscal_descricao' => 'required|string',
             'razao_social' => 'required|string',
-            'phone_number' => 'required|string',
-            'responsavel' => 'required| string',
-            'address_id' => 'required|numeric',
+            'phone_number' => 'string',
+            'responsavel' => ' string',
+            'workshop_id' => 'required|numeric',
+        
+
+
 
             // dados endereço
            
@@ -49,12 +52,6 @@ class WorkshopRequest extends FormRequest
             'cep' => 'required',
             'number' => 'nullable|numeric',
             'complement' => 'nullable',
-            
-
-
-
-
-
 
         ];
     }
@@ -63,15 +60,13 @@ class WorkshopRequest extends FormRequest
     {
         return[
             'cnpj.required' => 'Campo CNPJ é obrigatório!',
-          //  'nome_fantasia.required' => 'Campo nome fantasia é obrigatório!',
             'descricao_situacao_cadastral.required' => 'Campo situação é obrigatório!',
             'cnae_fiscal_descricao.required' => 'Campo nome fantasia é obrigatório!',
             'email.required' => 'Campo e-mail é obrigatório!',
             'phone_number.required' => 'Campo telefone é obrigatório!',
             'responsavel.required' => 'Campo responsável é obrigatório!',
-             'state.required' => 'Selecione um estado',
-             'city.required' => 'Selecione uma cidade',
-            'street.max' => 'Campo endereço é obrigatório!',
+             'state.required' => 'Selecione um Estado',
+             'city.required' => 'Selecione uma Cidade',
             'neighborhood.required' => 'Campo bairro é obrigatório!',
             'cep.required' => 'Campo cep é obrigatório!',
             'street.required' => 'Campo endereço é obrigatório!',

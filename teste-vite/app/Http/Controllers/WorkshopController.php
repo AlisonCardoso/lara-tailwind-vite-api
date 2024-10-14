@@ -43,14 +43,14 @@ class WorkshopController extends Controller
      */
     public function create()
     {
-        $title = "Nova Oficina";
+       // $title = "Nova Oficina";
 
         // $states = State::orderBy('name', 'ASC')->get();
         // $cities = City::all();
          $address = Address::all();
          $workshops = $this->workshop->all();
         //  return view('workshop.create',compact('workshops',  'title','address','states','cities'));
-          return view('workshop.create',compact('workshops',  'title','address'));
+          return view('workshop.create',compact('workshops','address'));
 
 
     }
@@ -61,6 +61,7 @@ class WorkshopController extends Controller
     public function store(Request $request)
 
     {
+        dd($request);                          
 
         try {
 
