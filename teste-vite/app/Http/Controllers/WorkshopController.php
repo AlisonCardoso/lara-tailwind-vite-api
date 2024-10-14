@@ -27,7 +27,7 @@ class WorkshopController extends Controller
 
     public function store(WorkshopRequest $request)
     {
-       // dd($request->all());
+       
         try {
             DB::beginTransaction();
 
@@ -86,6 +86,26 @@ class WorkshopController extends Controller
 
     public function destroy(Workshop $workshop)
     {
-        // Lógica para excluir a oficina
+        try {
+            DB::beginTransaction();
+    
+            // Excluir o endereço associado, se existir
+            if ($workshop->address) {
+                $workshop->address()->delete();
+            }
+    
+            // Excluir a oficina
+            $workshop->delete();
+    
+            DB::commit();
+    
+            Session::flash('success', 'Oficina excluída com sucesso');
+            return redirect()->route('workshops.index');
+        } catch (Exception $e) {
+            DB::rollBack();
+            Log::warning('Erro ao excluir a oficina', ['error' => $e->getMessage()]);
+            return back()->with('error', 'Erro ao excluir a oficina!');
+        }
     }
+    
 }
