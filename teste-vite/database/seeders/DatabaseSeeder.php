@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\RegionalCommand;
 use App\Models\SubCommand;
 use App\Models\Company;
+use App\Models\Category;
+use App\Models\SubCategory;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,18 +27,21 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-           // SituacaoContaSeeder::class,
-           // ContaSeeder::class,
-         // TipoContaSeeder::class,
+           
 
            SeederComandoRegional::class,
            SeederBatalhao::class,
            SeederCompanies::class,
+           SeederCategoria::class,
+           seederSubcategoria::class,
+
+
+
+
           //  SeederType_vehicle::class,
-         
-           
-             // CategorySeeder::class,
-             // SubcategorySeeder::class,
+         // SituacaoContaSeeder::class,
+           // ContaSeeder::class,
+         // TipoContaSeeder::class,
              // SituationVehiclesSeeder::class,
              
             

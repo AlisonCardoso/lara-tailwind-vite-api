@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sub_commands', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('regional_command_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->string('name');
-            $table->string('slug',15);
+            $table->string('name', 50)->unique();
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sub_commands');
+        Schema::dropIfExists('categories');
     }
 };
