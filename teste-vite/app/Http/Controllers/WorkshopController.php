@@ -58,7 +58,7 @@ class WorkshopController extends Controller
     public function edit(Workshop $workshop)
     {
         $title = "Editar Oficina";
-        return view('workshop.edit', compact('workshop', 'title'));
+        return view('workshop.create', compact('workshop', 'title'));
     }
 
     public function update(WorkshopRequest $request, Workshop $workshop)
