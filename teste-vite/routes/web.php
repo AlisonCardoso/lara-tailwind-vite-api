@@ -5,6 +5,7 @@ use App\Http\Controllers\WorkshopController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\ServiceController;
 
 
 
@@ -30,4 +31,4 @@ Route::get('/create-company', CreateCompany::class)->name('create-company');
     //Route::resources(['subcommands'=> SubCommandController ::class]);
     Route::resources(['companies'=> CompanyController::class]);
 
-    //Route::resource('services', ServiceController::class);
+    Route::resource('services', ServiceController::class);

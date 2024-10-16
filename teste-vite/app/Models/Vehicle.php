@@ -42,6 +42,11 @@ class Vehicle extends Model
     {
         return $this->belongsTo(Situation_Vehicle::class);
     }
+    public function serviceOrders()
+    {
+        return $this->hasMany(Service_order::class);
+    }
+    
     /*
     public function services()
     {

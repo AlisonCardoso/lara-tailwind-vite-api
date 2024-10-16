@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('sub_category_id')->constrained();
             $table->string('name');
+            $table->decimal('price', 10, 2);
             $table->string('description')->nullable();
+            $table->integer('stock')->default(0); // Quantidade em estoque
             $table->timestamps();
         });
     }

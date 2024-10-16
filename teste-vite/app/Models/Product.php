@@ -8,14 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description', 'sub_category_id'];
+    protected $fillable = ['name', 'description',  'stock','sub_category_id'];
     public function subcategory()
       {
         return $this->belongsTo(Subcategory::class);
     }
-    /*
-    public function serviceProducts()
+    public function serviceOrders()
     {
-        return $this->hasMany(Service_product::class);
-    }*/
+        return $this->hasMany(Service_order::class);
+    }
 }
