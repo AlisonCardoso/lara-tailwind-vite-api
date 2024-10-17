@@ -12,6 +12,7 @@ use App\Http\Controllers\ServiceController;
 use  App\Livewire\BuscarCep;
 use App\Livewire\BuscarCnpj;
 use App\Livewire\CreateCompany;
+use App\Livewire\CategorySubcategory;
 
 Route::get('/', function () {
     return view('index');
@@ -19,6 +20,7 @@ Route::get('/', function () {
 Route::get('/buscar-cep',BuscarCep::class)->name('buscar-cep');
 Route::get('/buscar-cnpj', BuscarCnpj::class)->name('buscar-cnpj');
 Route::get('/create-company', CreateCompany::class)->name('create-company');
+Route::get('/create-product', CategorySubcategory::class)->name('create-product');
 
 //Route::resources(['customers'=> CustomerController::class]);
    Route::resources(['workshops'=> WorkshopController::class]);
