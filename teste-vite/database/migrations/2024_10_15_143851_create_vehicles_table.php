@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('prefix')->unique();//prefixo
             $table->boolean('characterized')->default(true);// caracterizada
             $table->string('asset_number')->unique()->nullable(); //numero de patrimonio
-            $table->string('odometer')->unique()->nullable();
+            $table->string('odometer')->nullable();
             $table->boolean('active')->default(true);
             $table->string('plate')->unique(); //placa
             $table->year('year'); //ano

@@ -20,7 +20,8 @@
     <!-- 'sub_command_id',-->
     @livewire('create-company')
 
-     <!-- 'vehicle_type_id',-->
+    
+    <!-- 'vehicle_type_id',-->
     <div class="mt-4"> 
         <label for="type_vehicle_id"class="block font-medium text-sm text-gray-700 dark:text-gray-200">
             TIPO DO VEÍCULO
@@ -33,6 +34,8 @@
            @endforeach  
         </select>
         </div>
+
+
          <!-- 'type_vehicle_id',-->
     <div class="mt-4"> 
         <label for="type_vehicle_id"class="block font-medium text-sm text-gray-700 dark:text-gray-200">
@@ -82,7 +85,7 @@
 
             <div class="mt-4">
                 <label for="characterized" class="block font-medium text-sm text-gray-700 dark:text-gray-200">Plotagem da Viatura!</label
-                <select name="characterized" id="characterized" class="mt-2 text-sm sm:text-base pl-2 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" />   	
+                <select name="characterized" id="characterized" class="mt-2 text-sm sm:text-base pl-2 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400">   	
                     <option value="1" @if (old('characterized') == 1) selected @endif>Caracterizada</option>
                     <option value="0" @if (old('characterized') == 0) selected @endif>Descaracterizada</option>
                 </select>{{ $errors->has('characterized') ? ' has-error' : '' }}

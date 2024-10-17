@@ -31,7 +31,7 @@ class Vehicle extends Model
      public function type_vehicle()
      {
 
-         return $this->hasOne(Type_Vehicle::class);
+         return $this->hasOne(TypeVehicle::class);
      }
      public function sub_command()
     {
@@ -40,16 +40,16 @@ class Vehicle extends Model
 
     public function situationVehicle()
     {
-        return $this->belongsTo(Situation_Vehicle::class);
+        return $this->belongsTo(SituationVehicle::class);
     }
     public function serviceOrders()
     {
         return $this->hasMany(Service_order::class);
     }
     
-    /*
+ 
     public function services()
     {
         return $this->hasMany(Service::class);
-    }*/
+    }
 }
