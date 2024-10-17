@@ -21,20 +21,24 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+      /*User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+            'email' => 'test2@example.com',
+        ]);*/
 
         $this->call([
            
-
+          
            SeederComandoRegional::class,
            SeederBatalhao::class,
            SeederCompanies::class,
            SeederCategoria::class,
            seederSubcategoria::class,
 
+ /*
+           Seedertipoveiculo::class,
+           SeederSituacaoVeiculo::class,
+*/
 
 
 
