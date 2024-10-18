@@ -16,7 +16,7 @@ use App\Livewire\CategorySubcategory;
 use App\Livewire\LaborComponent;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/buscar-cep',BuscarCep::class)->name('buscar-cep');
 Route::get('/buscar-cnpj', BuscarCnpj::class)->name('buscar-cnpj');
