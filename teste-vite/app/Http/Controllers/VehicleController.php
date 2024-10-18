@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Vehicle;
 use App\Models\Company;
-use App\Models\SubCommand;
 use App\Models\SituationVehicle;
+use App\Models\SubCommand;
+use App\Models\Vehicle;
 use App\Models\TypeVehicle;
-use App\Models\RegionalCommand;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
+use PhpOffice\PhpWord\PhpWord;
+use Exception;
 
 class VehicleController extends Controller
 {
-    
     private $user;
     private  $vehicle;
     public function __construct()
@@ -38,15 +41,12 @@ class VehicleController extends Controller
   }
     public function create()
     {
+       $title = "Novo veículo";
+       $vehicle_type = TypeVehicle::all();
+       $situation_vehicle = SituationVehicle::all();
+       $sub_command = SubCommand::all();
+       return view('vehicle.create', compact('vehicle_type','sub_command','title','situation_vehicle'));
 
-        $title = "Novo veículo";
-        $vehicle_type = TypeVehicle::all();
-        $situation_vehicle = SituationVehicle::all();
-        $sub_command = SubCommand::all();
-        return view('vehicle.form', compact('vehicle_type','sub_command','title','situation_vehicle'));
- 
-   
-        //return view('vehicle.form');
     }
 
     /**
@@ -54,69 +54,78 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        {
-            $request->validate([
-                'sub_command_id' => 'required|exists:sub_commands,id',
-                'type_vehicle_id' => 'required|exists:type_vehicles,id',
-                'brand' => 'required|string|max:255',
-                'model' => 'required|string|max:255',
-                'prefix' => 'required|string|unique:vehicles|max:255',
-                'plate' => 'required|string|unique:vehicles|max:255',
-                'year' => 'required|integer|min:1900|max:' . date('Y'),
-                'price' => 'required|numeric',
-                'active' => 'boolean',
-            ]);
-    
-            Vehicle::create($request->all());
-    
-            return redirect()->route('vehicles.index')->with('success', 'Veículo cadastrado com sucesso!');
-        }
-    
+         try {
+        DB::beginTransaction();
+        $vehicle= Vehicle::create($request->all());
         
+        $vehicle->save();
+        DB::Commit();
+
+        Session::flash('success', 'Veiculo cadastrado com successo');
+        return redirect()->route('vehicles.index');
+            }
+             catch (Exception $e) {
+
+        // Salvar log
+        Log::warning('Conta não editada', ['error' => $e->getMessage()]);
+
+        // Redirecionar o usuário, enviar a mensagem de erro
+        return back()->withInput()->with('error', 'Veiculo não cadastrado!');
     }
-    public function show(Vehicle $vehicle)
-    {
-        //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Vehicle $vehicle)
+
+    public function show($id)
     {
-        return view('vehicles.form', compact('vehicle'));
+        $vehicle = Vehicle::findOrFail($id);
+        return view('vehicles.show', compact('vehicle'));
+
+
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Vehicle $vehicle)
+    public function edit($id)
+    {
+        $vehicle = Vehicle::findOrFail($id);
+        return view('vehicles.edit', compact('vehicle'));
+    }
+
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'sub_command_id' => 'required|exists:sub_commands,id',
-            'type_vehicle_id' => 'required|exists:type_vehicles,id',
-            'brand' => 'required|string|max:255',
-            'model' => 'required|string|max:255',
-            'prefix' => 'required|string|max:255|unique:vehicles,prefix,' . $vehicle->id,
-            'plate' => 'required|string|max:255|unique:vehicles,plate,' . $vehicle->id,
-            'year' => 'required|integer|min:1900|max:' . date('Y'),
-            'price' => 'required|numeric',
-            'active' => 'boolean',
+            
+            'sub_command_id' => 'required|string|max:150',
+            'type_vehicle_id' => 'required|string|max:55',
+            'situation_vehicle_id' => 'required|string|max:55',
+            'brand' => 'required|string|max:100',
+            'model' => 'required|string|max:100',
+            'asset_number'=> 'required|string|max:100',
+            'plate' => 'required|string|max:10|unique:vehicles,plate,' . $id,
+            'prefix' => 'required|string|max:10|unique:vehicles,prefix,' . $id,
+            'year' => 'required|digits:4|integer|min:1900|max:' . (date('Y')),
+            'odometer' => 'required|integer',
+            'characterized' => 'required|boolean',
+            'active' => 'required|boolean',
+            'price' => 'required|numeric|min:0',
+          
+      
+           
+           
+            
+
         ]);
 
+        $vehicle = Vehicle::findOrFail($id);
         $vehicle->update($request->all());
 
-        return redirect()->route('vehicles.index')->with('success', 'Veículo atualizado com sucesso!');
-    
+        return redirect()->route('vehicles.index')->with('success', 'Vehicle updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Vehicle $vehicle)
+    public function destroy($id)
     {
+        $vehicle = Vehicle::findOrFail($id);
         $vehicle->delete();
-        return redirect()->route('vehicles.index')->with('success', 'Veículo deletado com sucesso!');
-    
+
+        return redirect()->route('vehicles.index')->with('success', 'Vehicle deleted successfully.');
     }
 }

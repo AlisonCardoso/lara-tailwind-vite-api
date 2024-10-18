@@ -26,6 +26,8 @@ class Vehicle extends Model
         'odometer',
          'price'
 
+         
+
      ];
 
      public function type_vehicle()

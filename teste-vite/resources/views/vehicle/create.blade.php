@@ -19,6 +19,8 @@
     @csrf
     <!-- 'sub_command_id',-->
     @livewire('create-company')
+  
+     
 
     
     <!-- 'vehicle_type_id',-->
@@ -36,12 +38,12 @@
         </div>
 
 
-         <!-- 'type_vehicle_id',-->
+         <!-- 'situation_vehicle_id',-->
     <div class="mt-4"> 
-        <label for="type_vehicle_id"class="block font-medium text-sm text-gray-700 dark:text-gray-200">
-            TIPO DO VEÍCULO
+        <label for="situation_vehicle_id"class="block font-medium text-sm text-gray-700 dark:text-gray-200">
+            Situação DO VEÍCULO
         </label>
-        <select name="type_vehicle_id" id="type_vehicle_id" 
+        <select name="situation_vehicle_id" id="situation_vehicle_id" 
         class="mt-2 text-sm sm:text-base pl-2 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" />   	
     <option selected>SITUAÇÃO DO VEÍCULO</option>
             @foreach ($situation_vehicle->all() as $situation)
@@ -49,6 +51,7 @@
            @endforeach  
         </select>
         </div>
+
           <!--'brand',-->
         <div class="mt-4">
             <x-input-label for="brand" :value="__('Marca:') " />
@@ -62,6 +65,7 @@
             <x-text-input id="model" class="block mt-1 w-full" type="text" name="model" :value="old('model')" required autofocus autocomplete="model" />
             <x-input-error :messages="$errors->get('model')" class="mt-2" />
         </div>
+
         <!--prefix--> 
         <div>
             <x-input-label for="prefix" :value="__('Prefixo')" />
@@ -125,9 +129,10 @@
     </div>
 
         </form>
-    </x-slot>
+   
 
                    
          </div>
       </div>
+  
 @endsection
